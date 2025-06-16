@@ -6,27 +6,27 @@
 
 ## Клонируем проект себе локально
 
-### git clone https://github.com/dgtal-cat/wiam_cb_playwright_ts.git
+### `git clone https://github.com/dgtal-cat/wiam_cb_playwright_ts.git`
 
-Либо скачиваем .zip и распаковываем
+Либо скачиваем `.zip` и распаковываем
 
 ## Выполняем в терминале команду
 
-### npm install
+### `npm install`
 
 ## Для запуска тестов настроены следующие скрипты
 
 Запуск всех тестов:
-### npm run test
+### `npm run test`
 
 Запуск тестов с тегом @e2e
-### npm run test:e2e
+### `npm run test:e2e`
 
 Запуск тестов с тегом @api
-### npm run test:api
+### `npm run test:api`
 
 Просмотр последнего отчета прогона в формате HTML
-### npm run test:report
+### `npm run test:report`
 
 ## Для тестового задания были установлены следующие настройки `playwright.config.ts`
 
