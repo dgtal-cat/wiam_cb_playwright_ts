@@ -85,8 +85,6 @@ test.describe('Тесты страницы поиска', { tag: '@e2e' }, () =>
 
 	testParameters.forEach(({ request, expected }) => {
 		test(`Проверка данных в карточке клиента по запросу ${request}`, async () => {
-			const clientData: string[] = []
-
 			await form.fillSearchRequest(request)
 			await form.pressEnterInSearchInput()
 
@@ -100,12 +98,14 @@ test.describe('Тесты страницы поиска', { tag: '@e2e' }, () =>
 			const email = await card.getEmail()
 			const creditAmount = await card.getCreditAmount()
 
-			clientData.push(fullname)
-			clientData.push(status)
-			clientData.push(passportNumber)
-			clientData.push(phoneNumber)
-			clientData.push(email)
-			clientData.push(creditAmount)
+			const clientData = [
+				fullname,
+				status,
+				passportNumber,
+				phoneNumber,
+				email,
+				creditAmount,
+			]
 
 			expect(clientData, 'Данные клиента на карточке должны соответствовать тестовым').toEqual(expected)
 		})
