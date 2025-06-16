@@ -5,8 +5,8 @@ import { MainPageCard } from '../elements/MainPage/MainPageCard'
 export class MainPage extends BasePage {
 	readonly header: Locator
 	readonly leadText: Locator
-	private searchCard: MainPageCard
-	private statisticsCard: MainPageCard
+	readonly searchCard: MainPageCard
+	readonly statisticsCard: MainPageCard
 
 	constructor(page: Page) {
 		super(page, '')

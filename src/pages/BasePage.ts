@@ -1,5 +1,6 @@
 import { Page } from "@playwright/test"
-import { envConfig } from '../../config/config'
+
+const baseUrl = process.env.HOST_URL
 
 export class BasePage {
 
@@ -12,6 +13,6 @@ export class BasePage {
     }
 
 	async open(): Promise<void> {
-		await this.page.goto(envConfig.HOST_URL + this.url)
+		await this.page.goto(baseUrl + this.url)
 	}
 }

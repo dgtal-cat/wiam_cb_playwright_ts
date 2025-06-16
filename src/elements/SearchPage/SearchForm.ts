@@ -14,7 +14,7 @@ export class SearchForm extends BaseElement {
 		this.requestBlock = new BaseElement(this.el.locator('input#query').locator('..'))
 		this.sortingBlock = new BaseElement(this.el.locator('select#sort_by').locator('..'))
 		this.filteringBlock = new BaseElement(this.el.locator('input#active').locator('..'))
-		this.minAmountBlock = new BaseElement(this.el.locator('label#min_amount').locator('..'))
+		this.minAmountBlock = new BaseElement(this.el.locator('input#min_amount').locator('..'))
 		this.searchButton = new BaseElement(this.el.locator('xpath=//button[@type="submit"]'))
 		this.clearButton = new BaseElement(this.el.locator('xpath=//button[@type="reset"]'))
 	}
@@ -23,6 +23,12 @@ export class SearchForm extends BaseElement {
 		const input = this.requestBlock.el.locator('input')
 		
 		await input.fill(text)
+	}
+
+	async pressEnterInSearchInput() {
+		const input = this.requestBlock.el.locator('input')
+		
+		await input.press('Enter')
 	}
 
 	async selectSorting(type: '-- Выберите --' | 'По имени' | 'По сумме кредита' | 'По статусу' | 'Удалить все') {
