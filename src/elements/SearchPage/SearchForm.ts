@@ -21,19 +21,19 @@ export class SearchForm extends BaseElement {
 
 	async fillSearchRequest(text: string) {
 		const input = this.requestBlock.el.locator('input')
-		
+
 		await input.fill(text)
 	}
 
 	async pressEnterInSearchInput() {
 		const input = this.requestBlock.el.locator('input')
-		
+
 		await input.press('Enter')
 	}
 
 	async selectSorting(type: '-- Выберите --' | 'По имени' | 'По сумме кредита' | 'По статусу' | 'Удалить все') {
 		const dropdown = this.sortingBlock.el.locator('select')
-		const option = this.sortingBlock.el.locator('option', {hasText: type})
+		const option = this.sortingBlock.el.locator('option', { hasText: type })
 
 		await dropdown.click()
 		await option.click()
@@ -41,8 +41,8 @@ export class SearchForm extends BaseElement {
 
 	async activateFilters(filters: string[]) {
 		filters.forEach(async (type) => {
-			const checkbox = this.filteringBlock.el.locator('label', {hasText: type})
-			
+			const checkbox = this.filteringBlock.el.locator('label', { hasText: type })
+
 			await checkbox.check()
 
 			expect(await checkbox.isChecked()).toBeTruthy()

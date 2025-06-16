@@ -3,7 +3,7 @@ import { MainPage } from '../../src/pages/MainPage'
 import { SearchPage } from '../../src/pages/SearchPage'
 
 
-test.describe('Тесты главной страницы', {tag: '@e2e'}, () => {
+test.describe('Тесты главной страницы', { tag: '@e2e' }, () => {
 	let context: BrowserContext
 	let page: Page
 	let mainPage: MainPage
@@ -31,7 +31,7 @@ test.describe('Тесты главной страницы', {tag: '@e2e'}, () =>
 
 	test('Проверка перехода на страницу поиска', async () => {
 		await mainPage.goToSearch()
-		await expect (searchPage.header).toBeVisible()
+		await expect(searchPage.header).toBeVisible()
 		await expect(searchPage.infoText).toBeVisible()
 		await expect(searchPage.searchForm.el).toBeVisible()
 	})

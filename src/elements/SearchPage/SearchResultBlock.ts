@@ -13,8 +13,8 @@ export class SearchResultBlock extends BaseElement {
 		super(l)
 		this.header = new BaseElement(this.el.locator('h2'))
 		this.newSearchButton = new BaseElement(this.el.locator('xpath=//a[contains(@class, "btn-outline-primary")]'))
-		this.searchRequestBlock = new BaseElement(this.el.locator('strong', { hasText: 'Поисковый запрос:'}).locator('..'))
-		this.foundShownCLinets = new BaseElement(this.el.locator('p', { hasText: 'Найдено клиентов:'}).locator('..'))
+		this.searchRequestBlock = new BaseElement(this.el.locator('strong', { hasText: 'Поисковый запрос:' }).locator('..'))
+		this.foundShownCLinets = new BaseElement(this.el.locator('p', { hasText: 'Найдено клиентов:' }).locator('..'))
 		this.clientCard = new ClientCard(this.el.locator('div.card-body'))
 	}
 

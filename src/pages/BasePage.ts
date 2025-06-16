@@ -10,7 +10,7 @@ export class BasePage {
 	constructor(page: Page, url: string) {
 		this.page = page
 		this.url = url
-    }
+	}
 
 	async open(): Promise<void> {
 		await this.page.goto(baseUrl + this.url)
